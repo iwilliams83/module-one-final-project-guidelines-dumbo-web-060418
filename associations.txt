@@ -1,0 +1,70 @@
+TODO: Models/Associations
+User
+  has many Personalities
+  has many characters through
+
+Personality
+  belongs to User
+  belongs to Character
+
+Quiz
+  belongs to User
+  belongs to Character
+
+Character
+  has many Personalities
+  has many Users through Personalities
+
+
+TODO: QUESTIONS
+What kind of alcoholic beverage do you prefer?
+  Beer
+  Wine
+  Cocktail
+  None (I don't drink)
+
+Which trait do you value most?
+  Courage
+  Loyalty
+  Knowledge
+  Wisdom
+
+What Kind of food do you normally eat?
+  Meat
+  Veggie
+  Vegan
+  Everything
+
+All these people are drowning. Who do you save?
+  Best Friend
+  Pet (my pet IS my best friend)
+  No worth risking my life
+
+What are you most afraid of?
+  Death
+  Failure
+  Getting Old
+  Losing loved ones
+
+Do you pour the milk before or after the cereal goes in the bowl?
+  Before
+  After
+
+Are you...
+  Left-handed?
+  Right-handed?
+
+Are you a...
+  Cat person?
+  Dog person?
+  Both
+  I hate pets
+
+Is the earth round or flat?
+  Definitely flat
+  Definitely round
+  It could be a cube
+
+Is a hot dog a sandwich?
+  Yes, of course
+  No, its a hotdog
