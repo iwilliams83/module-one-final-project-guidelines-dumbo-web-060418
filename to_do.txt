@@ -1,17 +1,18 @@
 
 TODO: Models/Associations
+User
+  has Personality
+  has Character through Personality
+
 Quiz
-  has many Personalities
-  has many Characters through Personalities
+  has Personalities & Characters
 
 Personality
   belongs to Quiz
   belongs to Character
 
 Character
-  has one Personality
-
-
+  has Personality
 
 
 TODO: QUESTIONS

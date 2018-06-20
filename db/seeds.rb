@@ -14,10 +14,7 @@ data = [
   ["ESFP", "Oberyn Martell", "Theon Greyjoy used to be an ESFP too... but after what Ramsay did to him, his personality is a little warped. So the best example of an ESFP has got to be Oberyn Martell, the daring Dornishman who loves life and being the center of attention. He feels intensely, but when he's not revenging his dead sister he's living it up as a cool party dude and matching wits with Tyrion in King's Landing."]
 ]
 
-# data.each do |d|
-#   INSERT INTO characters (personality, name, description) VALUES (d[0], d[1], d[2])
-# end
 
-# data.each do |d|
-#   Character.create(personality: d[0], name:d[1], description: d[2])
-# end
+data.each do |d|
+  Character.create(personality: d[0], name:d[1], description: d[2])
+end

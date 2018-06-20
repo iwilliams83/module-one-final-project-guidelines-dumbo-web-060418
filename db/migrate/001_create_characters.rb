@@ -3,7 +3,7 @@ class CreateCharacters < ActiveRecord::Migration
     create_table :characters do |t|
       t.string :personality
       t.string :name
-      t.string :description
+      t.text :description
     end
   end
 end
