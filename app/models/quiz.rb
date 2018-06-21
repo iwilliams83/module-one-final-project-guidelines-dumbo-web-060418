@@ -24,19 +24,19 @@ class Quiz < ActiveRecord::Base
          elsif answer == 3
            total += 2
          else
-           total += 1
+           total += 2
          end
       elsif question.answer4.nil?
          if answer == 1
-           total += 3
-         elsif answer == 2
-           total
-         else
            total += 1
+         elsif answer == 2
+           total += 1
+         else
+           total += 2
          end
       elsif question.answer.nil?
          if answer == 1
-           total += 2
+           total -= 2
          else
            total += 3
          end
