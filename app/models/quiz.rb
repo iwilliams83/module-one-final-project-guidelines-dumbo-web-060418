@@ -45,39 +45,37 @@ class Quiz < ActiveRecord::Base
 
    end #do end
 
-    puts "total = #{total}"
-
     if (1..16).include? (total)
       character = Character.find_by(id: total)
       puts
-      puts "* * * * * * * * * * * *"
+      puts "* * * * * * * * * * * * * * * * * * * * * * "
       puts
       puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
       puts "#{character.description}"
       puts
-      puts "* * * * * * * * * * * *"
+      puts "* * * * * * * * * * * * * * * * * * * * * * "
       puts
 
     else
       if total < 1
         character = Character.find_by(id: 1)
         puts
-        puts "* * * * * * * * * * * *"
+        puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
         puts "You are #{character.name}! You have a(n) #{character.personality} personality.\n\n"
         puts "#{character.description}"
         puts
-        puts "* * * * * * * * * * * *"
+        puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
       elsif total > 16
         character = Character.find_by(id: 16)
         puts
-        puts "* * * * * * * * * * * *"
+        puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
         puts "You are #{character.name}! You have a(n) #{character.personality} personality.\n\n"
         puts "#{character.description}"
         puts
-        puts "* * * * * * * * * * * *"
+        puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
       end
     end

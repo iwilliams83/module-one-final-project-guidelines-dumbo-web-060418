@@ -1,4 +1,4 @@
-#Game of Thrones parody quiz
+# Game of Thrones parody quiz
 The main premise of the quiz is for the user to answer some relevant questions
 and have them get Myers briggs personality and the character that best corresponds with that personality as well as a description of that character’s personality.
 
