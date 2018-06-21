@@ -17,7 +17,7 @@ def get_character_info
 
   div_info = []
   character_divs.each do |div|
-    info = (div.css('.eH').text.split(": "))
+    info = (div.css(".eH").text.split(": "))
     info << (div.css(".eA").text)
     div_info << info
   end

@@ -18,3 +18,20 @@ data = [
 data.each do |d|
   Character.create(personality: d[0], name:d[1], description: d[2])
 end
+
+
+
+questions = [["What's your favorite season?",["(1) Winter", "(2) Spring", "(3) Summer", "(4) Fall"]],
+            ["What's your favorite color scheme?",["(1) Ocean", "(2) Sunset", "(3) Rainbow"]],
+          ["Marvel or DC",["(1) Marvel", "(2) DC"]],
+          ["Pick a superpower",["(1) Invisibility", "(2) Invulnerability", "(3) Flight"]],
+      ["What color is the dress?",["(1) Blue and black", "(2) White and gold"]],
+    ["How do you prepare cereal?",["(1) Milk first", "(2) Cereal first"]],
+  ["Are you...",["(1) Left-handed", "(2) Right-handed"]],
+["Are you a...",["(1) Cat person", "(2) Dog person", "(3) I hate pets"]],
+["Is the earth round or flat?",["(1) Definitely flat", "(2) Definitely round", "(3) Definitely boxy"]],
+["Is a hotdog a sandwich?",["(1) Yes, of course", "(2) No, its a hotdog"]]]
+
+questions.each do |question|
+  Question.create(content: question[0], answer1: question[1][0], answer2: question[1][1], answer3: question[1][2], answer4: question[1][3])
+end

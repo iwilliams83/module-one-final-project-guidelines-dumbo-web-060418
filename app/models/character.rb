@@ -1,3 +1,3 @@
 class Character < ActiveRecord::Base
- #character has personality, name, description
+  belongs_to :quiz 
 end

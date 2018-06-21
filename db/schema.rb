@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 4) do
 
   create_table "characters", force: :cascade do |t|
-    t.string "personality"
-    t.string "name"
-    t.text   "description"
+    t.string  "personality"
+    t.string  "name"
+    t.text    "description"
+    t.integer "quiz_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string  "content"
+    t.string  "answer1"
+    t.string  "answer2"
+    t.string  "answer3"
+    t.string  "answer4"
+    t.integer "quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer "total", default: 0
   end
 
 end
