@@ -2,6 +2,9 @@ class Quiz < ActiveRecord::Base
   has_many :questions
   has_many :characters
 
+
+
+
   def logic_method
     i = 0
     total = 0
