@@ -29,7 +29,7 @@ puts "
 
 puts "----------------------------------------------------------------------------------------
 
-".red.bold.on_white
+".red.bold
 user = User.new
 user.start_quiz
 
