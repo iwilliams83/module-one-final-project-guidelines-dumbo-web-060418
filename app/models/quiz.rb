@@ -3,9 +3,6 @@ class Quiz < ActiveRecord::Base
   has_many :characters
   belongs_to :user
 
-
-
-
   def logic_method
     total = 0
 
