@@ -37,7 +37,7 @@ puts "--------------------------------------------------------------------------
   while answer == "play"
     new_quiz = Quiz.new
     new_quiz.logic_method
-    puts "Wanna go again? (input play to go again)"
+    puts "Wanna go again? (input play to go again, or press any key to quit)"
     answer = gets.chomp
     if answer != "play"
       break

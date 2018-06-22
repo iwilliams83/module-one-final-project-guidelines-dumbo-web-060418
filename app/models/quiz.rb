@@ -2,14 +2,12 @@ class Quiz < ActiveRecord::Base
   has_many :questions
   has_many :characters
 
-
-
-
   def logic_method
     i = 0
     total = 0
 
     Question.all.each do |question|
+      puts 
       puts question.content
 
       puts question.answer1
@@ -19,6 +17,7 @@ class Quiz < ActiveRecord::Base
       answer = get_user_answer
       answer = check_answer(answer, question)
 
+      #point system
       if !question.answer4.nil?
          if answer == 1
            total += 1
@@ -65,7 +64,7 @@ class Quiz < ActiveRecord::Base
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
-        puts "You are #{character.name}! You have a(n) #{character.personality} personality.\n\n"
+        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
         puts "#{character.description}"
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
@@ -75,7 +74,7 @@ class Quiz < ActiveRecord::Base
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
-        puts "You are #{character.name}! You have a(n) #{character.personality} personality.\n\n"
+        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
         puts "#{character.description}"
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
