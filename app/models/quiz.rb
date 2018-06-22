@@ -8,12 +8,12 @@ class Quiz < ActiveRecord::Base
 
     Question.all.each do |question|
       puts
-      puts question.content
+      puts question.content.cyan
 
-      puts question.answer1
-      puts question.answer2
-      puts question.answer3 unless question.answer3.nil?
-      puts question.answer4 unless question.answer4.nil?
+      puts question.answer1.red
+      puts question.answer2.fg(154)
+      puts question.answer3.blue unless question.answer3.nil?
+      puts question.answer4.blue unless question.answer4.nil?
       answer = get_user_answer
       answer = check_answer(answer, question)
 
@@ -50,34 +50,34 @@ class Quiz < ActiveRecord::Base
     if (1..16).include? (total)
       character = Character.find_by(id: total)
       puts
-      puts "* * * * * * * * * * * * * * * * * * * * * * "
+      puts "* * * * * * * * * * * * * * * * * * * * * * ".cyan
       puts
-      puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
-      puts "#{character.description}"
+      puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n".white
+      puts "#{character.description}".white
       puts
-      puts "* * * * * * * * * * * * * * * * * * * * * * "
+      puts "* * * * * * * * * * * * * * * * * * * * * * ".cyan
       puts
 
     else
       if total < 1
         character = Character.find_by(id: 1)
         puts
-        puts "* * * * * * * * * * * * * * * * * * * * * * "
+        puts "* * * * * * * * * * * * * * * * * * * * * * ".cyan
         puts
-        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
-        puts "#{character.description}"
+        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n".white
+        puts "#{character.description}".white
         puts
-        puts "* * * * * * * * * * * * * * * * * * * * * * "
+        puts "* * * * * * * * * * * * * * * * * * * * * * ".cyan
         puts
       elsif total > 16
         character = Character.find_by(id: 16)
         puts
-        puts "* * * * * * * * * * * * * * * * * * * * * * "
+        puts "* * * * * * * * * * * * * * * * * * * * * * ".cyan
         puts
-        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
-        puts "#{character.description}"
+        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n".white
+        puts "#{character.description}".white
         puts
-        puts "* * * * * * * * * * * * * * * * * * * * * * "
+        puts "* * * * * * * * * * * * * * * * * * * * * * ".cyan
         puts
       end
     end
@@ -93,15 +93,15 @@ class Quiz < ActiveRecord::Base
 
   def check_answer(answer, question)
     if answer < 1 || answer > 4
-      puts "Invalid answer. Please enter the number of your choice: "
+      puts "Invalid answer. Please enter the number of your choice: ".magenta
       answer = get_user_answer
       check_answer(answer, question)
     elsif (answer > 2) && (question.answer3.nil?)
-      puts "Invalid answer. Please enter the number of your choice: "
+      puts "Invalid answer. Please enter the number of your choice: ".magenta
       answer = get_user_answer
       check_answer(answer, question)
     elsif (answer > 3) && (question.answer4.nil?)
-      puts "Invalid answer. Please enter the number of your choice: "
+      puts "Invalid answer. Please enter the number of your choice: ".magenta
       answer = get_user_answer
       check_answer(answer, question)
     else
