@@ -11,8 +11,8 @@ class Quiz < ActiveRecord::Base
 
       puts question.answer1.red
       puts question.answer2.fg(154)
-      puts question.answer3.blue unless question.answer3.nil?
-      puts question.answer4.blue unless question.answer4.nil?
+      puts question.answer3.fg(40) unless question.answer3.nil?
+      puts question.answer4.fg(202) unless question.answer4.nil?
       answer = get_user_answer
       answer = check_answer(answer, question)
 
