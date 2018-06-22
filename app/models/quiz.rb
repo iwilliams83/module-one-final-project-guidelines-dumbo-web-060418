@@ -1,14 +1,18 @@
 class Quiz < ActiveRecord::Base
   has_many :questions
   has_many :characters
+<<<<<<< HEAD
   belongs_to :user
 
 
+=======
+>>>>>>> ee7db59cad9bd778cc62839c0121eb147781c23e
 
   def logic_method
     total = 0
 
     Question.all.each do |question|
+      puts
       puts question.content
 
       puts question.answer1
@@ -18,6 +22,7 @@ class Quiz < ActiveRecord::Base
       answer = get_user_answer
       answer = check_answer(answer, question)
 
+      #point system
       if !question.answer4.nil?
          if answer == 1
            total += 1
@@ -30,13 +35,13 @@ class Quiz < ActiveRecord::Base
          end
       elsif question.answer4.nil?
          if answer == 1
-           total += 1
+           total -= 1
          elsif answer == 2
            total += 1
          else
-           total += 2
+           total -=2
          end
-      elsif question.answer.nil?
+      elsif question.answer3.nil?
          if answer == 1
            total -= 2
          else
@@ -45,7 +50,7 @@ class Quiz < ActiveRecord::Base
      else
      end
 
-   end #do end
+   end # end 'do' block
 
     if (1..16).include? (total)
       character = Character.find_by(id: total)
@@ -64,7 +69,7 @@ class Quiz < ActiveRecord::Base
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
-        puts "You are #{character.name}! You have a(n) #{character.personality} personality.\n\n"
+        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
         puts "#{character.description}"
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
@@ -74,7 +79,7 @@ class Quiz < ActiveRecord::Base
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
         puts
-        puts "You are #{character.name}! You have a(n) #{character.personality} personality.\n\n"
+        puts "You are #{character.name.upcase}! You have a(n) #{character.personality} personality.\n\n"
         puts "#{character.description}"
         puts
         puts "* * * * * * * * * * * * * * * * * * * * * * "
@@ -86,27 +91,26 @@ class Quiz < ActiveRecord::Base
     user.save
     self.total = total
     self.save
-  end #def end
-
+end
   def get_user_answer
     answer = gets.chomp.to_i
   end
 
   def check_answer(answer, question)
     if answer < 1 || answer > 4
-      puts "Invalid answer, try again: "
+      puts "Invalid answer. Please enter the number of your choice: "
       answer = get_user_answer
       check_answer(answer, question)
     elsif (answer > 2) && (question.answer3.nil?)
-      puts "Invalid answer, try again: "
+      puts "Invalid answer. Please enter the number of your choice: "
       answer = get_user_answer
       check_answer(answer, question)
     elsif (answer > 3) && (question.answer4.nil?)
-      puts "Invalid answer, try again: "
+      puts "Invalid answer. Please enter the number of your choice: "
       answer = get_user_answer
       check_answer(answer, question)
     else
       return answer
     end
   end
-end #class end
+end # end class definition

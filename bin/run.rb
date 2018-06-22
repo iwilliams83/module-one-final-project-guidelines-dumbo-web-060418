@@ -36,14 +36,18 @@ user.start_quiz
   puts "                                INPUT play to get started,"
   puts "                                or anything else to quit,"
   puts "                                 it's up to you really,"
-  puts "                                      I don't care"
+  puts "                                      I don't care:"
   answer = gets.chomp
   while answer == "play"
     new_quiz = Quiz.new
     new_quiz.user_id = user.id
     new_quiz.logic_method
+<<<<<<< HEAD
     new_quiz.save
     puts "Wanna go again? (input play to go again)"
+=======
+    puts "Wanna go again? (input play to go again, or press any key to quit)"
+>>>>>>> ee7db59cad9bd778cc62839c0121eb147781c23e
     answer = gets.chomp
     if answer != "play"
       break
