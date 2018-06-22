@@ -3,7 +3,7 @@ class Quiz < ActiveRecord::Base
   has_many :characters
 
   def logic_method
-    i = 0
+    
     total = 0
 
     Question.all.each do |question|

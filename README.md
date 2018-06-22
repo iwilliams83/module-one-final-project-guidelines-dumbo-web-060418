@@ -11,6 +11,10 @@ The quiz is written is Ruby, and uses ActiveRecord. The source code can be found
 
 Quiz questions are stored in a table, and are exposed one at a time when a new Quiz instance is initialized (when the user begins a new quiz). The code can be tested by running the run.rb file in the terminal (make sure a new Quiz is initiated there).
 
+### Notes on seed data:
+The website (and data) that was scraped for for use in this project does not belong to us. The website and all of its
+content belong Bustle.com.
+
 ## Contributing
 Pull requests should clearly state the changes that you would like to integrate. A new migration file is required in order
 to add or change columns to tables in the database.
