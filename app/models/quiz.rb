@@ -1,12 +1,10 @@
 class Quiz < ActiveRecord::Base
   has_many :questions
   has_many :characters
-<<<<<<< HEAD
   belongs_to :user
 
 
-=======
->>>>>>> ee7db59cad9bd778cc62839c0121eb147781c23e
+
 
   def logic_method
     total = 0
@@ -91,7 +89,7 @@ class Quiz < ActiveRecord::Base
     user.save
     self.total = total
     self.save
-end
+  end
   def get_user_answer
     answer = gets.chomp.to_i
   end

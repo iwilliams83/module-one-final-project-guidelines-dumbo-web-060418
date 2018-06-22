@@ -42,12 +42,8 @@ user.start_quiz
     new_quiz = Quiz.new
     new_quiz.user_id = user.id
     new_quiz.logic_method
-<<<<<<< HEAD
     new_quiz.save
-    puts "Wanna go again? (input play to go again)"
-=======
     puts "Wanna go again? (input play to go again, or press any key to quit)"
->>>>>>> ee7db59cad9bd778cc62839c0121eb147781c23e
     answer = gets.chomp
     if answer != "play"
       break
