@@ -7,7 +7,7 @@ class Quiz < ActiveRecord::Base
     total = 0
 
     Question.all.each do |question|
-      puts 
+      puts
       puts question.content
 
       puts question.answer1
@@ -45,7 +45,7 @@ class Quiz < ActiveRecord::Base
      else
      end
 
-   end #do end
+   end # end 'do' block
 
     if (1..16).include? (total)
       character = Character.find_by(id: total)
@@ -81,7 +81,7 @@ class Quiz < ActiveRecord::Base
         puts
       end
     end
-  end #def end
+  end # end logic_method
 
   def get_user_answer
     answer = gets.chomp.to_i
@@ -104,4 +104,4 @@ class Quiz < ActiveRecord::Base
       return answer
     end
   end
-end #class end
+end # end class definition
