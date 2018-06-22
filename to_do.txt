@@ -63,7 +63,7 @@ Projects need to be approved prior to launching into them, so take some time to 
     and how to exchange ideas in a healthier more positive way.
 
   - Address, if anything, what you would change or add to what you have today?
-    I would spend some more time on the point system of the game, and work on the math a bit more to try to make it
+    Maybe spend some more time on the point system of the game, and work on the math a bit more to try to make it
     a little bit more realistic (even though it was just a joke to begin with).
 
   - Present any code you would like to highlight.
