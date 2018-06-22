@@ -1,6 +1,7 @@
 require_relative '../config/environment'
 
 
+
 def intro
   puts "
               ,---.                  ,---. ,_   ,--,--'.
@@ -29,6 +30,9 @@ puts "
 puts "----------------------------------------------------------------------------------------
 
 "
+user = User.new
+user.start_quiz
+
   puts "                                INPUT play to get started,"
   puts "                                or anything else to quit,"
   puts "                                 it's up to you really,"
@@ -36,7 +40,9 @@ puts "--------------------------------------------------------------------------
   answer = gets.chomp
   while answer == "play"
     new_quiz = Quiz.new
+    new_quiz.user_id = user.id
     new_quiz.logic_method
+    new_quiz.save
     puts "Wanna go again? (input play to go again, or press any key to quit)"
     answer = gets.chomp
     if answer != "play"

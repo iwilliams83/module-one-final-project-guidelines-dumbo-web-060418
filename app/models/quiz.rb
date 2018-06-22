@@ -1,9 +1,12 @@
 class Quiz < ActiveRecord::Base
   has_many :questions
   has_many :characters
+  belongs_to :user
+
+
+
 
   def logic_method
-    
     total = 0
 
     Question.all.each do |question|
@@ -81,8 +84,12 @@ class Quiz < ActiveRecord::Base
         puts
       end
     end
-  end # end logic_method
-
+    user = User.find_by(id: self.user_id)
+    user.total = total
+    user.save
+    self.total = total
+    self.save
+  end
   def get_user_answer
     answer = gets.chomp.to_i
   end
