@@ -28,13 +28,13 @@ class Quiz < ActiveRecord::Base
          end
       elsif question.answer4.nil?
          if answer == 1
-           total += 1
+           total -= 1
          elsif answer == 2
            total += 1
          else
-           total += 2
+           total -=2
          end
-      elsif question.answer.nil?
+      elsif question.answer3.nil?
          if answer == 1
            total -= 2
          else
