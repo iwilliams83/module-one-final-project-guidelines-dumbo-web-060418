@@ -90,15 +90,15 @@ class Quiz < ActiveRecord::Base
 
   def check_answer(answer, question)
     if answer < 1 || answer > 4
-      puts "Invalid answer, try again: "
+      puts "Invalid answer. Please enter the number of your choice: "
       answer = get_user_answer
       check_answer(answer, question)
     elsif (answer > 2) && (question.answer3.nil?)
-      puts "Invalid answer, try again: "
+      puts "Invalid answer. Please enter the number of your choice: "
       answer = get_user_answer
       check_answer(answer, question)
     elsif (answer > 3) && (question.answer4.nil?)
-      puts "Invalid answer, try again: "
+      puts "Invalid answer. Please enter the number of your choice: "
       answer = get_user_answer
       check_answer(answer, question)
     else

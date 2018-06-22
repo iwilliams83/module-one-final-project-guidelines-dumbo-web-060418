@@ -20,7 +20,7 @@ puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WINTER IS COMING %%%%%%%%%%%%%%%%%%%%%
 
   puts "                         Please answer questions TRUTHFULLY"
   puts "                      by inputting the number that corresponds"
-  puts  "                                   for that choice"
+  puts  "                                   for that choice."
 
 puts "
 
@@ -32,7 +32,7 @@ puts "--------------------------------------------------------------------------
   puts "                                INPUT play to get started,"
   puts "                                or anything else to quit,"
   puts "                                 it's up to you really,"
-  puts "                                      I don't care"
+  puts "                                      I don't care:"
   answer = gets.chomp
   while answer == "play"
     new_quiz = Quiz.new
